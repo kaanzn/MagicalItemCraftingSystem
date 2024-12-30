@@ -3,7 +3,7 @@ namespace MagicalCrafting.Enums
     public enum Element
     {
         Fire,
-        Ice,
+        Water,
         Earth,
         Air,
         Spirit

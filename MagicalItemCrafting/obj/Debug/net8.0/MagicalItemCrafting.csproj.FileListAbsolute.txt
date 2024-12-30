@@ -12,3 +12,7 @@
 /Users/kaanozaydin/Desktop/MagicalItemCraftingSystem/MagicalItemCrafting/obj/Debug/net8.0/MagicalItemCrafting.pdb
 /Users/kaanozaydin/Desktop/MagicalItemCraftingSystem/MagicalItemCrafting/obj/Debug/net8.0/MagicalItemCrafting.genruntimeconfig.cache
 /Users/kaanozaydin/Desktop/MagicalItemCraftingSystem/MagicalItemCrafting/obj/Debug/net8.0/ref/MagicalItemCrafting.dll
+/Users/kaanozaydin/Desktop/MagicalItemCraftingSystem/MagicalItemCrafting/obj/Debug/net8.0/MagicalItemCrafting.sourcelink.json
+/Users/kaanozaydin/Desktop/MagicalItemCraftingSystem/MagicalItemCrafting/bin/Debug/net8.0/Newtonsoft.Json.dll
+/Users/kaanozaydin/Desktop/MagicalItemCraftingSystem/MagicalItemCrafting/obj/Debug/net8.0/MagicalItemCrafting.csproj.AssemblyReference.cache
+/Users/kaanozaydin/Desktop/MagicalItemCraftingSystem/MagicalItemCrafting/obj/Debug/net8.0/MagicalI.49A949AD.Up2Date

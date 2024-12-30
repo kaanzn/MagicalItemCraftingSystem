@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wIMx2uSM1pY=",
+  "dgSpecHash": "TlSX3zrVEVM=",
   "success": true,
   "projectFilePath": "/Users/kaanozaydin/Desktop/MagicalItemCraftingSystem/MagicalItemCrafting/MagicalItemCrafting.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/kaanozaydin/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

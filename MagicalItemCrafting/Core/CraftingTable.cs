@@ -73,8 +73,8 @@ namespace MagicalCrafting.Core
             {
                 var (e1, e2) when (e1 == e2) => "Resonating Power",
 
-                (Element.Fire, Element.Ice) or
-                (Element.Ice, Element.Fire) => "Thermal Shock",
+                (Element.Fire, Element.Water) or
+                (Element.Water, Element.Fire) => "Thermal Shock",
 
                 (Element.Earth, Element.Air) or
                 (Element.Air, Element.Earth) => "Dusty Whirlwind",
@@ -83,7 +83,7 @@ namespace MagicalCrafting.Core
                 (_, Element.Spirit) => "Spiritual Infusion",
 
                 (Element.Fire, _) when first.Potency > second.Potency => "Burning",
-                (Element.Ice, _) when first.Potency > second.Potency => "Freezing",
+                (Element.Water, _) when first.Potency > second.Potency => "Freezing",
 
                 _ => "No special effect"
             };
@@ -106,8 +106,8 @@ namespace MagicalCrafting.Core
             //Rule2: Opposing elements require high potency (>=8) to combine
             //Only Master Crafters can handle volatile combinations
             //Note: Spirit has no opposing elements
-            if((first.Element == Element.Fire && second.Element == Element.Ice) ||
-               (first.Element == Element.Ice && second.Element == Element.Fire) ||
+            if((first.Element == Element.Fire && second.Element == Element.Water) ||
+               (first.Element == Element.Water && second.Element == Element.Fire) ||
                (first.Element == Element.Earth && second.Element == Element.Air) ||
                (first.Element == Element.Air && second.Element == Element.Earth))
             {

@@ -5,6 +5,7 @@ namespace MagicalCrafting.Enums
         Crystal,
         Herb,
         Metal,
-        Essence
+        Essence,
+        Relic
     }
 }

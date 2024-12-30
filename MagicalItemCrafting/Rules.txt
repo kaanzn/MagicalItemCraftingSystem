@@ -1,0 +1,75 @@
+Magical Item Crafting System
+
+Core Requirements:
+
+1. Allow users to combine two magical ingredients to create new items.
+2. Each ingredient must have the following attributes:
+    - Name (string)
+    - Element (Fire, Ice, Earth, Air, Spirit)
+    - Potency (integer value between 1 - 10)
+    - Type (Crystal, Herb, Metal, or Essence)
+    - Rarity (Common, Uncommon, Rare, Legendary)
+
+3. Crafting should produce a result containing:
+    - Name of the crafted item.
+    - Quality score (decimal value between 0.0 - 1.0 / output as percentage)
+    - Success / Failure status
+    - Special Effect message
+
+4. The crafting table should:
+    - Have two slots for ingredients
+    - Validate ingredient placement
+    - Check compatibility
+    - Calculate the resulting Quality
+    - Generate appropriate result messages
+
+
+Game Logic Rules:
+1. Ingredient Compatibility Rules:
+    - Combined Potency cannot exceed 20
+    - Opposing Elements (Fire - Ice, Earth - Air) require both ingredients to have potency >= 8
+    - Legendary ingredients cannot be paired with Common ingredients
+    - Strong Potency (8 - 10) cannot be paired with Weak Potency (1 - 3)
+
+2. Quality Calculations:
+    - Base Quality = (ingredient1.Potency + ingredient2.Potency) / (2 * MaxPotency)
+    -- We sum the potencies to get the total magical power
+    -- We divide (2 * MaxPotency) because:
+        > Two ingredients at max potency (10 + 10) / (2 * 10) = 1.0 (Perfect Quality)
+        > Two ingredients at min potency (1 + 1) / (2 * 10) = 0.1 (Poor Quality)
+        > Two average ingredients (5 + 5) / (2 * 10) = 0.5 (Medium Quality)
+
+    Rarity Bonuses: 
+        > Two Legendary: +0.5 
+        > One Legendary: +0.3
+        > Two Rare: +0.2
+        > Same Rarity: +0.1
+
+    - Final Quality capped at 1.0
+    - Quality Determines:
+        > Item Durability
+        > Strength of Magical Effects
+        > Market value
+        > Crafting Experience gained
+
+3. Crafting Result Rules:
+    - Crystal + Herb = Potion
+    - Metal + Crystal = Amulet
+    - Herb + Essence = Elixir
+    - Other Combinations = Mixture (Generic)
+
+    Quality Tiers affect magical item power:
+        <= 0.3: Poor
+        <= 0.6: average
+        <= 0.8: Good
+        <= 0.9: Masterwork
+
+4. Special Effects:
+    - Same Elements: "Resonating Power" (Double the elemental effect strength)
+    - Fire + Ice: "Thermal Shock" (Add damage over time)
+    - Earth + Air: "Dusty Whirlwind" (Add area of attack component)
+    - Any Spirit: "Spiritual Infusion" (Add duration boost)
+    - Dominant Fire: "Burning" (Add fire damage component)
+    - Dominant Ice: "Freezing" (Add show effect)
+
+    

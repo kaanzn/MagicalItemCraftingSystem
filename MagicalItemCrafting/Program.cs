@@ -1,5 +1,8 @@
-﻿using MagicalCrafting.Core;
+﻿using System.Net.WebSockets;
+using System.Runtime.InteropServices;
+using MagicalCrafting.Core;
 using MagicalCrafting.Enums;
+using MagicalCrafting.Json;
 using MagicalCrafting.Records;
 
 namespace MagicalCrafting
@@ -10,19 +13,17 @@ namespace MagicalCrafting
 
         public static void Main()
         {
+            string filePath = @$"Json/ItemList.json";
+
+            List<Ingredient> items = JsonHandler.LoadItems(filePath);
             bool isGameRunning = true;
+            Console.WriteLine();
             Console.WriteLine("----- Welcome to the Magical Crafting System -----");
 
             while(isGameRunning)
             {
-                Console.WriteLine(@"
-                1. Add Ingredient to Slot 1
-                2. Add Ingredient to Slot 2
-                3. Attempt Crafting
-                4. Clear Crafting Table
-                5. Exit
-                
-                ");
+                Console.WriteLine();
+                Console.WriteLine("\t1. Add Ingredient to Slot 1 \n\t2. Add Ingredient to Slot 2 \n\t3. Attempt Crafting \n\t4. Clear Crafting Table \n\t5. Show Current Stats \n\t6. Show Ingredients list \n\t7. Show Items \n\t8. Exit");
 
                 if(!int.TryParse(Console.ReadLine(), out int input))
                 {
@@ -33,18 +34,28 @@ namespace MagicalCrafting
                 switch(input)
                 {
                     case 1:
-                        AddIngredient(input);
+                        AddItemToSlot(items, 1);
                         break;
                     case 2:
-                        AddIngredient(input);
+                        AddItemToSlot(items, 2);
                         break;
                     case 3:
                         AttemptCrafting();
                         break;
                     case 4:
                         _craftingTable = new CraftingTable();
+                        Console.WriteLine("\tCrafting Table Cleared!");
                         break;
                     case 5:
+                        Console.WriteLine(Player.ShowStats());
+                        break;
+                    case 6:
+                        Ingredient.ShowIngredients();
+                        break;
+                    case 7:
+                        ShowItems(items);
+                        break;
+                    case 8:
                         Console.WriteLine("Thank you for using the Magical Crafting Table!");
                         isGameRunning = false;
                         break;
@@ -55,112 +66,70 @@ namespace MagicalCrafting
             }
         }
 
+        private static void ShowItems(List<Ingredient> items)
+        {
+            Console.Clear();
+            Console.WriteLine();
+            Console.WriteLine("===== Magical Items List =====");
+
+            if (items.Count == 0)
+            {
+                Console.WriteLine("No Items Available");
+                return;
+            }
+
+            foreach (var i in items)
+            {
+                Console.WriteLine($"-> Name: {i.Name}");
+                Console.WriteLine($"  Element: {i.Element}");
+                Console.WriteLine("------------------------");
+            }
+        }
+
         private static void AttemptCrafting()
         {
             var result = _craftingTable.AttemptCrafting();
 
-            Console.WriteLine($@"
-                Crafting Results:
-                    Item: {result.ItemName}
-                    Quality: {result.Quality:P0}
-                    Success: {result.Success}
-                    Special Effect: {result.Message}
-            ");
+            if(result.Success)
+            {
+                Player.totalCraftsMade++;
+            }
+            Console.WriteLine();
+            Console.WriteLine($"\tCrafting Results:\n\t\tItem: {result.ItemName}\n\t\tQuality: {result.Quality:P0}\n\t\tSuccess: {result.Success}\n\t\tSpecial Effect: {result.Message}");
         }
 
-        private static void AddIngredient(int slot)
+        private static void AddItemToSlot(List<Ingredient> items, int slot)
         {
             Console.WriteLine();
+            Console.WriteLine("Enter the Name of the Ingredient: ");
+            string input = Console.ReadLine()!;
 
-            Console.WriteLine("Enter Ingredient Name: ");
-            string name = Console.ReadLine() ?? "Mystery Item"; // Same as an if statement that will check for null
-
-            // Element Selection (if input invalid, default to Spirit)
-            Console.WriteLine(@"
-                Enter Element: 
-                    1. Fire
-                    2. Ice
-                    3. Earth
-                    4. Air
-                    5. Spirit
-                
-            ");
-
-
-            Element element = Console.ReadLine() switch
+            foreach (var i in items)
             {
-                "1" => Element.Fire,
-                "2" => Element.Ice,
-                "3" => Element.Earth,
-                "4" => Element.Air,
-                "5" => Element.Spirit,
-                _ => Element.Spirit,
-            };
-
-            //Get Potency value (1 - 10)
-            Console.WriteLine(); 
-            Console.WriteLine("Enter Potency Value (1 - 10): ");
-            if(!int.TryParse(Console.ReadLine(), out int potency))
-            {
-                potency = 1;
+                if (i.Name == input)
+                {
+                    if(_craftingTable.AddIngredient(i, slot))
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine($"Successfully added {i.Name} to slot {slot}");
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Failed to add the Ingredient to slot {slot}");
+                        break;
+                    }                    
+                }
+                else if (i.Name != input && i == items.Last())
+                {
+                    Console.WriteLine($"Item {input} does not exist!");
+                    break;
+                }
+                else
+                {
+                    continue;
+                }
             }
-
-            potency = Math.Clamp(potency, 1, 10);
-
-            //Ingredient Type Selection (Default to Crystal)
-            Console.WriteLine();
-
-            Console.WriteLine(@"
-                Enter Ingredient Type: 
-                    1. Crystal
-                    2. Herb
-                    3. Metal
-                    4. Essence
-            ");
-
-            IngredientType type = Console.ReadLine() switch
-            {
-                "1" => IngredientType.Crystal,
-                "2" => IngredientType.Herb,
-                "3" => IngredientType.Metal,
-                "4" => IngredientType.Essence,
-                _ => IngredientType.Crystal,
-
-            };
-
-            //Rarity Selection (Default to Common)
-            Console.WriteLine();
-
-            Console.WriteLine(@"
-                Select Rarity: 
-                    1. Common
-                    2. Uncommon
-                    3. Rare
-                    4. Legendary
-            ");
-
-            Rarity rarity = Console.ReadLine() switch
-            {
-                "1" => Rarity.Common,
-                "2" => Rarity.Uncommon,
-                "3" => Rarity.Rare,
-                "4" => Rarity.Legendary,
-                _ => Rarity.Common,
-            };
-
-            var ingredient = new Ingredient(name, element, potency, type, rarity);
-
-            if(_craftingTable.AddIngredient(ingredient, slot))
-            {
-                Console.WriteLine();
-                Console.WriteLine($"Successfully added {name} to slot {slot}");
-            }
-            else
-            {
-                Console.WriteLine($"Failed to add the Ingredient to slot {slot}");
-            }
-
-
         }
     }
 }

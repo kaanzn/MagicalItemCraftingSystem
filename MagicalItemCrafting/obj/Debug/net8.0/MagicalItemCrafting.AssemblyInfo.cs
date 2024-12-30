@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MagicalItemCrafting")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6cd108857e64195bb08b824ad5a08703bb261927")]
 [assembly: System.Reflection.AssemblyProductAttribute("MagicalItemCrafting")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MagicalItemCrafting")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

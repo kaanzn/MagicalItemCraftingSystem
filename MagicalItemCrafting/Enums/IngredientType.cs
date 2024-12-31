@@ -1,11 +1,10 @@
-namespace MagicalCrafting.Enums
+namespace MagicalCrafting.Enums;
+
+public enum IngredientType
 {
-    public enum IngredientType
-    {
-        Crystal,
-        Herb,
-        Metal,
-        Essence,
-        Relic
-    }
+    Crystal,
+    Herb,
+    Metal,
+    Essence,
+    Relic
 }

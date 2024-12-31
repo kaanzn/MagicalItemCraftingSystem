@@ -1,11 +1,9 @@
-namespace MagicalCrafting.Enums
+namespace MagicalCrafting.Enums;
+public enum Element
 {
-    public enum Element
-    {
-        Fire,
-        Water,
-        Earth,
-        Air,
-        Spirit
-    }
+    Fire,
+    Water,
+    Earth,
+    Air,
+    Spirit
 }

@@ -1,0 +1,150 @@
+[
+    {
+        "Name" : "Clear Opal",
+        "Element" : "Spirit",
+        "Potency" : 2,
+        "IngredientType" : "Crystal",
+        "Rarity" : "Common"
+
+    },
+    {
+        "Name" : "Red Opal",
+        "Element" : "Fire",
+        "Potency" : 4,
+        "IngredientType" : "Crystal",
+        "Rarity" : "Common"
+    },
+    {
+        "Name" : "Blue Opal",
+        "Element" : "Water",
+        "Potency" : 4,
+        "IngredientType" : "Crystal",
+        "Rarity" : "Common"
+    },
+    {
+        "Name" : "Green Opal",
+        "Element" : "Earth",
+        "Potency" : 3,
+        "IngredientType" : "Crystal",
+        "Rarity" : "Common"
+    },
+    {
+        "Name" : "White Opal",
+        "Element" : "Air",
+        "Potency" : 3,
+        "IngredientType" : "Crystal",
+        "Rarity" : "Common"
+    },
+    {
+        "Name" : "Witch Grass",
+        "Element" : "Earth",
+        "Potency" : 3,
+        "IngredientType" : "Herb",
+        "Rarity" : "Uncommon"
+    },
+    {
+        "Name" : "Lion Eye Flower",
+        "Element" : "Earth",
+        "Potency" : 7,
+        "IngredientType" : "Herb",
+        "Rarity" : "Uncommon"
+    },
+    {
+        "Name" : "Sorcerer's Stone",
+        "Element" : "Earth",
+        "Potency" : 8,
+        "IngredientType" : "Metal",
+        "Rarity" : "Rare"
+    },
+    {
+        "Name" : "Juniper Tree Essence",
+        "Element" : "Earth",
+        "Potency" : 5,
+        "IngredientType" : "Essence",
+        "Rarity" : "Rare"
+    },
+    {
+        "Name" : "Dragon Scale",
+        "Element" : "Fire",
+        "Potency" : 4,
+        "IngredientType" : "Relic",
+        "Rarity" : "Uncommon"
+    },
+    {
+        "Name" : "Phoenix Feather",
+        "Element" : "Fire",
+        "Potency" : 8,
+        "IngredientType" : "Relic",
+        "Rarity" : "Legendary"
+    },
+    {
+        "Name" : "Lava Stone",
+        "Element" : "Fire",
+        "Potency" : 4,
+        "IngredientType" : "Metal",
+        "Rarity" : "Common"
+    },
+    {
+        "Name" : "Water Drop",
+        "Element" : "Water",
+        "Potency" : 2,
+        "IngredientType" : "Essence",
+        "Rarity" : "Common"
+    },
+    {
+        "Name" : "Ice Shard",
+        "Element" : "Water",
+        "Potency" : 4,
+        "IngredientType" : "Crystal",
+        "Rarity" : "Uncommon"
+    },
+    {
+        "Name" : "Frost Rune",
+        "Element" : "Water",
+        "Potency" : 5,
+        "IngredientType" : "Essence",
+        "Rarity" : "Uncommon"
+    },
+    {
+        "Name" : "Golden Snow",
+        "Element" : "Water",
+        "Potency" : 7,
+        "IngredientType" : "Metal",
+        "Rarity" : "Rare"
+    },
+    {
+        "Name" : "Caged Fairy Soul",
+        "Element" : "Spirit",
+        "Potency" : 3,
+        "IngredientType" : "Essence",
+        "Rarity" : "Uncommon"
+    },
+    {
+        "Name" : "Broken Rune",
+        "Element" : "Spirit",
+        "Potency" : 5,
+        "IngredientType" : "Crystal",
+        "Rarity" : "Uncommon"
+    },
+    {
+        "Name" : "Krow Flower Seed",
+        "Element" : "Spirit",
+        "Potency" : 7,
+        "IngredientType" : "Herb",
+        "Rarity" : "Rare"
+    },
+    {
+        "Name" : "Cursed Man's Necklace",
+        "Element" : "Spirit",
+        "Potency" : 9,
+        "IngredientType" : "Metal",
+        "Rarity" : "Legendary"
+    },
+    {
+        "Name" : "Wind Rune",
+        "Element" : "Air",
+        "Potency" : 5,
+        "IngredientType" : "Crystal",
+        "Rarity" : "Uncommon"
+    }
+]

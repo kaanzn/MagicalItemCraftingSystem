@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/kaanozaydin/Desktop/MagicalItemCraftingSystem/MagicalItemCrafting/MagicalItemCrafting.csproj": {}
+    "/Users/kaanozaydin/Desktop/MagicalItemCraftingSystem-1/MagicalItemCrafting/MagicalItemCrafting.csproj": {}
   },
   "projects": {
-    "/Users/kaanozaydin/Desktop/MagicalItemCraftingSystem/MagicalItemCrafting/MagicalItemCrafting.csproj": {
+    "/Users/kaanozaydin/Desktop/MagicalItemCraftingSystem-1/MagicalItemCrafting/MagicalItemCrafting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kaanozaydin/Desktop/MagicalItemCraftingSystem/MagicalItemCrafting/MagicalItemCrafting.csproj",
+        "projectUniqueName": "/Users/kaanozaydin/Desktop/MagicalItemCraftingSystem-1/MagicalItemCrafting/MagicalItemCrafting.csproj",
         "projectName": "MagicalItemCrafting",
-        "projectPath": "/Users/kaanozaydin/Desktop/MagicalItemCraftingSystem/MagicalItemCrafting/MagicalItemCrafting.csproj",
+        "projectPath": "/Users/kaanozaydin/Desktop/MagicalItemCraftingSystem-1/MagicalItemCrafting/MagicalItemCrafting.csproj",
         "packagesPath": "/Users/kaanozaydin/.nuget/packages/",
-        "outputPath": "/Users/kaanozaydin/Desktop/MagicalItemCraftingSystem/MagicalItemCrafting/obj/",
+        "outputPath": "/Users/kaanozaydin/Desktop/MagicalItemCraftingSystem-1/MagicalItemCrafting/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/kaanozaydin/.nuget/NuGet/NuGet.Config"

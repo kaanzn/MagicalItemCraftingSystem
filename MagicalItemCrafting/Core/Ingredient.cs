@@ -1,30 +1,14 @@
-using System.Diagnostics.Contracts;
 using MagicalCrafting.Enums;
-using MagicalCrafting;
 
 namespace MagicalCrafting.Core
 {
     public class Ingredient
     {
-        public static List<Ingredient> ingredients = new();
         public string Name;
         public Element Element; 
         public int Potency;
         public IngredientType Type;
         public Rarity Rarity;
-
-        public static void ShowIngredients()
-        {
-            if (ingredients.Count <= 0)
-            {
-                Console.WriteLine("There are no ingredients");
-            }
-            foreach ( var i in ingredients)
-            {
-                Console.WriteLine();
-                Console.WriteLine($"{i.Name}");
-            }
-        }
 
         public void CreateIngredient()
         {
@@ -88,11 +72,6 @@ namespace MagicalCrafting.Core
             };
 
             var ingredient = new Ingredient(name, element, potency, type, rarity);
-            ingredient.AddToList(ingredient);
-        }
-        public void AddToList(Ingredient ingredient)
-        {
-            ingredients.Add(ingredient);
         }
 
         public Ingredient(string name, Element element, int potency, IngredientType type, Rarity rarity)

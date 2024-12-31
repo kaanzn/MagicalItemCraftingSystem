@@ -1,10 +1,9 @@
-namespace MagicalCrafting.Enums
+namespace MagicalCrafting.Enums;
+
+public enum Rarity
 {
-    public enum Rarity
-    {
-        Common,
-        Uncommon,
-        Rare,
-        Legendary
-    }
+    Common,
+    Uncommon,
+    Rare,
+    Legendary
 }

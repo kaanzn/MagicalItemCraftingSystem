@@ -1,7 +1,4 @@
-using System.Runtime.ExceptionServices;
-using MagicalCrafting.Records;
 using MagicalCrafting.Enums;
-using System.Data;
 
 namespace MagicalCrafting.Core
 {
